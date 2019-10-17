@@ -1,12 +1,14 @@
-// define variable that will contain a string of random characters to form the password
-let pwArray = [];
-// define variable with dummy item in index=0 to allow for concatenation later
-let password = " ";
 // define final password string
 let finalPw;
 
+var passwordEl = document.querySelector("#password");
+
 // Function will trigger password generator to launch when "Generate Password" button is clicked
 function generatePW() {
+    // define variable that will contain a string of random characters to form the password
+    let pwArray = [];
+    // define variable with dummy item in index=0 to allow for concatenation later
+    let password = " ";
 
     var userLength;
 
@@ -16,7 +18,7 @@ function generatePW() {
         userLength = prompt("Select the length of the password, between 8 and 128 characters");
         let lengthUser = parseInt(userLength);
         console.log("input: " + lengthUser);
-        console.log(typeof(lengthUser));
+        console.log(typeof (lengthUser));
         if (userLength < 8 || userLength > 129) {
             alert("That entry is not valid!");
             userChoice();
@@ -61,7 +63,7 @@ function generatePW() {
     console.log("selection: " + charSelection);
 
     // define all the possible characters than can be used in the password
-    let specialChar = [" ", "!", "", "#", "$", "%", "&", '"', "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"]
+    let specialChar = ["!", "", "#", "$", "%", "&", '"', "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"]
     let numericChar = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
     let lowecaseChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
     let uppercaseChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
@@ -111,7 +113,7 @@ function generatePW() {
     // loop will select individual characters and push them to the password
     for (var i = 0; i < userLength; i++) {
         randomChar();
-        console.log("type" + i);
+        console.log("type " + i);
         pushPassword();
     }
 
@@ -120,7 +122,7 @@ function generatePW() {
         let pendingChar = falseChar;
         falseChar = 0;
         for (var i = 0; i < pendingChar; i++) {
-            console.log("remaining" + i);
+            console.log("remaining " + i);
             randomChar();
             pushPassword();
         }
@@ -133,9 +135,6 @@ function generatePW() {
     }
     while (falseChar > 0);
 
-    console.log("password" + pwArray);
-    console.log("falseChar" + falseChar);
-
     // create a string from the password array
     for (var j = 0; j < userLength; j++) {
         let dummyVariable = password.concat(pwArray[j])
@@ -145,11 +144,15 @@ function generatePW() {
     finalPw = password.slice(1);
     console.log(finalPw);
 
-    // // display password on screen
-    // document.getElementById("password").innerHTML = finalPW;
+    // display password on screen
+    passwordEl.textContent = null;
+    passwordEl.textContent = finalPw;
 }
 
-// // Function will copy password to clipboard when "Copy to Clipboard" button is clicked
-// function copy() {
-
-// }
+// Function will copy password to clipboard when "Copy to Clipboard" button is clicked
+function copyPassword() {
+    var copyText = document.querySelector("#password");
+    copyText.select();
+    document.execCommand("copy");
+    // alert("Copied the text: " + copyText.value);
+}
