@@ -23,8 +23,7 @@ function generatePW() {
             alert("That entry is not valid!");
             userChoice();
         }
-        // console.log("truth? " + lengthUser !== NaN);
-        // console.log("truth? " + lengthUser !== "NaN");
+       
         else if (!Number.isInteger(lengthUser)) {
             alert("That entry is not valid!");
             userChoice();
@@ -149,10 +148,9 @@ function generatePW() {
     passwordEl.textContent = finalPw;
 }
 
-// Function will copy password to clipboard when "Copy to Clipboard" button is clicked
+// Function copies password to clipboard when "Copy to Clipboard" button is clicked
 function copyPassword() {
     var copyText = document.querySelector("#password");
     copyText.select();
     document.execCommand("copy");
-    // alert("Copied the text: " + copyText.value);
 }
