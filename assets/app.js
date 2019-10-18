@@ -134,7 +134,8 @@ function generatePW() {
     }
     while (falseChar > 0);
 
-    // create a string from the password array
+    // create a string from the password array with a dummy variable that will temporarily store the string
+    // that is being created
     for (var j = 0; j < userLength; j++) {
         let dummyVariable = password.concat(pwArray[j])
         password = dummyVariable;
