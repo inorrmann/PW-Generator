@@ -30,7 +30,7 @@ Your application should be deployed to GitHub Pages.
 
 Your application's GitHub repository should contain a README.md file explaining the purpose and functionality of the application. The README.md file should include a screenshot of the completed application as well as a link to the deployed GitHub Pages URL.
 
-![password generator demo](./Assets/03-JavaScript-homework-demo.png)
+![password generator demo](./03-JavaScript-homework-demo.png)
 
 ## User Story
 
