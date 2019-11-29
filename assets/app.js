@@ -23,7 +23,7 @@ function generatePW() {
             alert("That entry is not valid!");
             userChoice();
         }
-       
+
         else if (!Number.isInteger(lengthUser)) {
             alert("That entry is not valid!");
             userChoice();

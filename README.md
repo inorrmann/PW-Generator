@@ -1,4 +1,6 @@
-# PW-Generator
+# Password Generator
+
+![top language badge](https://img.shields.io/github/languages/top/inorrmann/PW-Generator)
 
 ## Description
 
